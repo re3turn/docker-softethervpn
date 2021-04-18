@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  vpn:
+    container_name: softether
+    build: .
+    volumes:
+      - vpn_data:/usr/vpnserver
+      - vpn_log:/var/log/vpnserver
+    ports:
+      - '500:500/udp'
+      - '4500:4500/udp'
+    privileged: true
+volumes:
+  vpn_data:
+  vpn_log:

@@ -1,0 +1,14 @@
+diff --git a/src/Cedar/Server.c b/src/Cedar/Server.c
+index 545d1313..1b1b868d 100644
+--- a/src/Cedar/Server.c
++++ b/src/Cedar/Server.c
+@@ -10917,7 +10917,7 @@ bool SiIsEnterpriseFunctionsRestrictedOnOpenSource(CEDAR *c)
+                ret = true;
+        }
+
+-       return ret;
++       return false;
+ }
+
+ // Update the current region
+ 

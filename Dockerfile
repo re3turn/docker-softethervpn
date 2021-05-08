@@ -18,10 +18,10 @@ RUN apk update && \
     zlib-dev \
     gnu-libiconv
 
-RUN git clone --recurse-submodules https://github.com/SoftEtherVPN/SoftEtherVPN_Stable.git SoftEtherVPN \
-    && cd SoftEtherVPN \
-    && ./configure \
-    && make
+COPY make.sh .
+COPY patch .
+
+RUN /bin/sh make.sh
 
 #########################
 # Service

@@ -4,12 +4,12 @@ services:
     container_name: softether
     build: .
     volumes:
-      - vpn_data:/usr/vpnserver
-      - vpn_log:/var/log/vpnserver
+      - vpn_data:/svr
     ports:
       - '500:500/udp'
       - '4500:4500/udp'
-    privileged: true
+      - '5555:5555/tcp'
+    cap_add:
+      - NET_ADMIN
 volumes:
   vpn_data:
-  vpn_log:
